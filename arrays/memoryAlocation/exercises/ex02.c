@@ -3,10 +3,12 @@
 
 void printArray(int *v, int n);
 void sumValueToArray(int *v, int n, int value);
+void freeVector(int **v);
 
 int main()
 {
   int *v  = (int *) calloc(5,sizeof(int));
+
 
   for(int i=0; i<5; i++)
   {
@@ -17,8 +19,8 @@ int main()
   sumValueToArray(v,5,5);
   printArray(v,5);
 
-  free(v);
-  v = NULL;
+
+  freeVector(&v);
 
 
 }
@@ -37,4 +39,10 @@ void sumValueToArray(int *v, int n, int value)
     {
         *(v+i) += value;
     }
+}
+
+void freeVector(int **v)
+{
+  free(*v);
+  *v = NULL;
 }
