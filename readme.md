@@ -7,9 +7,11 @@ The goal is to serve as a learning resource and reference for students and progr
 
 ## 🔹 Contents
 
-- [] Memory Concepts
+- [] Memory Concepts(heap and stack)
 - [] Arrays (vectors and matrix)  
-- [] Pointers and Dynamic Memory Allocation  
+- [] Pointers
+- [] Static Memory Allocation
+- [] Dynamic Memory Allocation  
 - [] Linked Lists and doubly linked lists
 - [] Stacks  
 - [] Queues  
