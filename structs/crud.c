@@ -15,8 +15,6 @@ typedef struct{
 }Student;
 
 
-
-
 Book *createBook(const char *title, unsigned int numPages, float price);
 Book *copyBook(const Book *book);
 
@@ -25,8 +23,6 @@ void printBook(Book * book);
 void destroyBook(Book **book);
 void printStudent(Student *student);
 void destroyStudent(Student **student);
-
-
 
 
 
