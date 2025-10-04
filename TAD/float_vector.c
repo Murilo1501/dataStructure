@@ -1,5 +1,6 @@
 #include "float_vector.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 struct float_vector{
     int capacity;
@@ -25,4 +26,35 @@ void destroy(FloatVector **vec)
     free((*vec)->data);
     free(*vec);
     *vec = NULL;
+}
+
+void append(FloatVector *vec, float val)
+{
+
+    if(vec->size == vec->capacity)
+    {
+        printf("Vector is full");
+        exit(EXIT_FAILURE);
+    }
+
+    vec->data[vec->size] = val;
+    vec->size++;
+}
+
+void print(FloatVector *vec)
+{
+    for(int i=0; i<vec->size; i++)
+    {
+        printf("%f",vec->data[i]);
+    }
+}
+
+int size(FloatVector *vec)
+{
+    return vec->size;
+}
+
+int capacity(FloatVector *vec)
+{
+    return vec->capacity;
 }

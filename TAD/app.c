@@ -4,9 +4,13 @@
 
 int main()
 {
-    FloatVector *vec = create(10);
+    FloatVector *vec = create(2);
 
-    puts("hello");
+    append(vec,0.0);
+    append(vec,1.0);
+    append(vec,2.0);
+
+    print(vec);
     destroy(&vec);
     return 0;
 
