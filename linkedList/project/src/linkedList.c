@@ -26,3 +26,13 @@ LinkedList *linkedListCreate(){
     return list;
 }
 
+void linkedListAddFirst(LinkedList *list, int val){
+  
+    Node *node = nodeCreate(20);
+    node->next = list->head 
+    list->head = node;
+
+}
+
+
+

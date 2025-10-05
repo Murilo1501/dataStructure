@@ -13,11 +13,12 @@ typedef struct {
 
 LinkedList *createLinkedList();
 Node *createNode(int val);
+void addFirst(LinkedList *list, int val);
 
 int main()
 {
     LinkedList *list = createLinkedList();
-    Node *node = createNode(10); 
+    addFirst(list,10); 
 }
 
 LinkedList *createLinkedList( )
@@ -35,4 +36,13 @@ Node *createNode(int val)
     node->next = NULL;
 
     return node;
+}
+
+void addFirst(LinkedList *list, int val)
+{
+   
+    Node *node = createNode(val);
+    node->next = list->head;
+    list->head = node;  
+
 }
