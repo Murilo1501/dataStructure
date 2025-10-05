@@ -1,0 +1,9 @@
+#ifndef LINKED_LIST_H
+#define LINKED_LIST_H
+
+typedef struct Node Node;
+typedef struct linkedList linkedList;
+
+linkedList *create();
+
+#endif
