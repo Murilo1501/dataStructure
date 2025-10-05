@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-LinkedList *create();
-
-
 
 typedef struct Node{
     int val;
@@ -14,12 +11,28 @@ typedef struct {
     Node *head;
 }LinkedList;  
 
+LinkedList *createLinkedList();
+Node *createNode(int val);
+
 int main()
 {
-
+    LinkedList *list = createLinkedList();
+    Node *node = createNode(10); 
 }
 
-LinkedList *create( )
+LinkedList *createLinkedList( )
 {
     LinkedList *list = (LinkedList *)calloc(1,sizeof(LinkedList));
+    list->head = NULL;
+
+    return list;
+}
+
+Node *createNode(int val)
+{
+    Node *node = (Node *)calloc(1,sizeof(Node));
+    node->val = val;
+    node->next = NULL;
+
+    return node;
 }

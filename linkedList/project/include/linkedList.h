@@ -4,6 +4,7 @@
 typedef struct Node Node;
 typedef struct linkedList linkedList;
 
-linkedList *create();
+linkedList *linkedListCreate();
+Node *nodeCreate(int val);
 
 #endif
