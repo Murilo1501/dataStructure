@@ -9,6 +9,7 @@ typedef struct Node{
 
 typedef struct {
     Node *head;
+    Node *tail;
 }LinkedList;  
 
 LinkedList *createLinkedList();
@@ -16,14 +17,18 @@ Node *createNode(int val);
 void addFirst(LinkedList *list, int val);
 void print(LinkedList *list);
 void addTail(LinkedList *list, int val);
+void addTailEfficient(LinkedList *list, int val);
 
 int main()
 {
     LinkedList *list = createLinkedList();
-    addFirst(list,10); 
-    addFirst(list,20); 
-    addFirst(list,30); 
-    addTail(list,7); 
+    //addFirst(list,10); 
+    //addFirst(list,20); 
+    //addFirst(list,30); 
+    //addTail(list,7); 
+    addTailEfficient(list,5);
+       addTailEfficient(list,10);
+    
     print(list);
 
 }
@@ -32,6 +37,7 @@ LinkedList *createLinkedList( )
 {
     LinkedList *list = (LinkedList *)calloc(1,sizeof(LinkedList));
     list->head = NULL;
+    list->tail = NULL;
 
     return list;
 }
@@ -81,5 +87,20 @@ void addTail(LinkedList *list, int val)
         p->next = node;
     }
 
+
+}
+
+void addTailEfficient(LinkedList *list, int val)
+{
+    Node *node = createNode(val);
+
+    if(list->head == NULL)
+    {
+        list->head = node;
+        list->tail = node;
+    }else{
+        list->tail->next = node;
+        list->tail = list->tail->next;  
+    }
 
 }

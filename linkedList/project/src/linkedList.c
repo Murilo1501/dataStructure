@@ -51,7 +51,7 @@ void linkedListAddTail(linkedList *list, int val)
 
     if(list->head == NULL)
     {
-        node = list->head;
+        list->head = node;
     } else{
         Node *p = list->head;
         while(p != NULL)
