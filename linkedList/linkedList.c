@@ -14,11 +14,16 @@ typedef struct {
 LinkedList *createLinkedList();
 Node *createNode(int val);
 void addFirst(LinkedList *list, int val);
+void print(LinkedList *list);
 
 int main()
 {
     LinkedList *list = createLinkedList();
     addFirst(list,10); 
+    addFirst(list,20); 
+    addFirst(list,30); 
+    print(list);
+
 }
 
 LinkedList *createLinkedList( )
@@ -36,6 +41,17 @@ Node *createNode(int val)
     node->next = NULL;
 
     return node;
+}
+
+void print(LinkedList *list)
+{
+    Node *p = list->head;
+
+    while(p != NULL)
+    {
+        printf("%d \n", p->val);
+        p = p->next;
+    }
 }
 
 void addFirst(LinkedList *list, int val)
