@@ -28,10 +28,39 @@ LinkedList *linkedListCreate(){
 
 void linkedListAddFirst(LinkedList *list, int val){
   
-    Node *node = nodeCreate(20);
+    Node *node = nodeCreate(val);
     node->next = list->head;
     list->head = node;
 
+}
+
+void print(LinkedList *list)
+{
+    Node *p = list->head;
+
+    while(p != NULL)
+    {
+        printf("%d\n", p->val);
+        p = p->next;
+    }
+}
+
+void linkedListAddTail(linkedList *list, int val)
+{
+    Node *node = nodeCreate(val);
+
+    if(list->head == NULL)
+    {
+        node = list->head;
+    } else{
+        Node *p = list->head;
+        while(p != NULL)
+        {
+            p = p->next;
+        }
+
+        p->next = node;
+    }
 }
 
 
