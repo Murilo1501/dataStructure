@@ -18,6 +18,7 @@ void addFirst(LinkedList *list, int val);
 void print(LinkedList *list);
 void addTail(LinkedList *list, int val);
 void addTailEfficient(LinkedList *list, int val);
+void addFirstTail(LinkedList *list, int val);
 
 int main()
 {
@@ -26,8 +27,10 @@ int main()
     //addFirst(list,20); 
     //addFirst(list,30); 
     //addTail(list,7); 
+    
+    addFirstTail(list,0);
     addTailEfficient(list,5);
-       addTailEfficient(list,10);
+    addTailEfficient(list,10);
     
     print(list);
 
@@ -62,6 +65,8 @@ void print(LinkedList *list)
     }
 }
 
+
+
 void addFirst(LinkedList *list, int val)
 {
    
@@ -71,9 +76,24 @@ void addFirst(LinkedList *list, int val)
 
 }
 
+void addFirstTail(LinkedList *list, int val)
+{
+    Node *node = createNode(val);
+
+    if(list->head == NULL)
+    {
+        list->head = node;
+        list->tail = node;
+    } else{
+        node->next = list->head;
+        list->head = node;  
+    }
+
+}
+
 void addTail(LinkedList *list, int val)
 {
-     Node *node = createNode(val);
+    Node *node = createNode(val);
     if(list->head == NULL)
     {
         list->head = node;
