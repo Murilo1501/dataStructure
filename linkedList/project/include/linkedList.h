@@ -9,6 +9,7 @@ void linkedListAddFirst(linkedList *list,int val);
 Node *nodeCreate(int val);
 void print(linkedList *list);
 void linkedListAddTail(linkedList *list,int val);
+void linkedListAddFirstTail(linkedList *list, int val);
 
 
 #endif

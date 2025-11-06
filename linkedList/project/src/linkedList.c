@@ -9,6 +9,7 @@ typedef struct Node{
 
 typedef struct linkedList{
     struct Node *head;
+    struct Node *tail;
 }LinkedList;
 
 Node *nodeCreate(int val){
@@ -61,6 +62,22 @@ void linkedListAddTail(linkedList *list, int val)
 
         p->next = node;
     }
+}
+
+void linkedListAddFirstTail(linkedList *list, int val)
+{
+    Node *node = nodeCreate(val);
+
+    if(list->head == NULL)
+    {
+        list->head = node;
+        list->tail = node;
+    }else{
+        node->next = list->head;
+        list->head = node;
+    }
+
+
 }
 
 
